@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleIO.cs" />
     <Compile Include="FibCalc.cs" />
+    <Compile Include="FibProgram.cs" />
+    <Compile Include="IProgramIO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

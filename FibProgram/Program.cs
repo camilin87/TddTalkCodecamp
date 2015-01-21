@@ -10,6 +10,7 @@ namespace FibProgram
     {
         static void Main(string[] args)
         {
+            new FibProgram(new ConsoleIO()).Run();
         }
     }
 }
