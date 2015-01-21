@@ -8,5 +8,10 @@ namespace FibProgram
         {
             Console.WriteLine(str);
         }
+
+        public string ReadLine()
+        {
+            return Console.ReadLine();
+        }
     }
 }
