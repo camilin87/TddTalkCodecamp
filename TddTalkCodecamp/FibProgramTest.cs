@@ -6,26 +6,33 @@ namespace TddTalkCodecamp
     [TestClass]
     public class FibProgramTest
     {
+        private StringIO _programIo;
+        private FibProgram.FibProgram _fibProgram;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _programIo = new StringIO();
+            _fibProgram = new FibProgram.FibProgram(_programIo);
+        }
+
         [TestMethod]
         public void PrompsTheUser()
         {
-            var programIo = new StringIO();
+            _fibProgram.Run();
 
-            new FibProgram.FibProgram(programIo).Run();
-
-            var userWasPrompted = programIo.Output.Contains("What fibonacci number do you want?");
+            var userWasPrompted = _programIo.Output.Contains("What fibonacci number do you want?");
             Assert.IsTrue(userWasPrompted);
         }
 
         [TestMethod]
         public void DisplaysTheFibonacciNumber()
         {
-            var programIo = new StringIO();
-            programIo.Input = "3";
+            _programIo.Input = "3";
 
-            new FibProgram.FibProgram(programIo).Run();
+            _fibProgram.Run();
 
-            var numberWasPresented = programIo.Output.Contains("Fibonacci number is 2");
+            var numberWasPresented = _programIo.Output.Contains("Fibonacci number is 2");
             Assert.IsTrue(numberWasPresented);
         }
     }
