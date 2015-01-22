@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FibCalc.cs" />
+    <Compile Include="FibonacciProgram.cs" />
     <Compile Include="IUserInteractor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
