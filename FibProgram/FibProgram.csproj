@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FibCalc.cs" />
+    <Compile Include="IUserInteractor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConsoleInteractor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

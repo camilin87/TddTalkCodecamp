@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace FibProgram
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static IUserInteractor Interactor = new ConsoleInteractor();
+
+        public static void Main(string[] args)
         {
+            Interactor.DisplayMessage("Enter a number");
         }
+
     }
 }
