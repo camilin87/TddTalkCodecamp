@@ -7,27 +7,31 @@ namespace TddTalkCodecamp
     [TestClass]
     public class ProgramTest
     {
+        private FakeInteractor _interactor;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            _interactor = new FakeInteractor();
+            Program.Interactor = _interactor;
+        }
+
         [TestMethod]
         public void PromptsTheUserForANumber()
         {
-            var interactor = new FakeInteractor();
-            Program.Interactor = interactor;
-
             Program.Main(null);
 
-            Assert.IsTrue(interactor.Output.Contains("Enter a number"));
+            Assert.IsTrue(_interactor.Output.Contains("Enter a number"));
         }
 
         [TestMethod]
         public void CalculatesTheFibonacciNumber()
         {
-            var interactor = new FakeInteractor();
-            interactor.Input = "6";
-            Program.Interactor = interactor;
+            _interactor.Input = "6";
 
             Program.Main(null);
 
-            Assert.IsTrue(interactor.Output.Contains("The number is 8"));
+            Assert.IsTrue(_interactor.Output.Contains("The number is 8"));
         }
     }
 
